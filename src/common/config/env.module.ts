@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import base from './env-config/base';
 import { validate } from './env-config/env.validation';
 import { archivosEnv } from './env-config/enviroments';
+import { EnvConfigService } from './services/env-config.service';
 
 @Module({
   imports: [
@@ -12,6 +13,9 @@ import { archivosEnv } from './env-config/enviroments';
       validate,
       envFilePath: archivosEnv[process.env.APP_ENV] || '.env',
     }),
+    ConfigModule,
   ],
+  providers: [EnvConfigService],
+  exports: [EnvConfigService],
 })
 export class envModule {}

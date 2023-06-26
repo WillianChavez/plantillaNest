@@ -1,6 +1,7 @@
 import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Entornos } from '../env-config/enviroments';
-
+import { Dialect } from 'sequelize';
+import { IsValidDialect } from '../validators/dialect.validator';
 export class VariablesDeEntorno {
   @IsNotEmpty()
   @IsEnum(Entornos)
@@ -40,7 +41,8 @@ export class VariablesDeEntorno {
 
   @IsNotEmpty()
   @IsString()
-  DB_DIALECT: string;
+  @IsValidDialect()
+  DB_DIALECT: Dialect;
 
   @IsNotEmpty()
   @IsString()
