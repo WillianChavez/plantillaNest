@@ -10,6 +10,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
         host: envConfig.variables.db.host,
         port: envConfig.variables.db.port,
         username: envConfig.variables.db.username,
+        password: envConfig.variables.db.password,
         autoLoadModels: true,
         synchronize: true,
       }),
