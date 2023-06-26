@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import base from './env-config/base';
-import { validate } from './env-config/env.validation';
+import { validate } from './validators/env.validation';
 import { archivosEnv } from './env-config/enviroments';
 import { EnvConfigService } from './services/env-config.service';
 

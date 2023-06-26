@@ -18,7 +18,7 @@ export function validate(config: Record<string, unknown>) {
     }
     console.log();
 
-    throw new Error(`Config validation error: \n\n ${messageOfErrorsContraints}`);
+    throw new Error(`Config validation error: \n\n${messageOfErrorsContraints}`);
   }
 
   return validatedConfig;

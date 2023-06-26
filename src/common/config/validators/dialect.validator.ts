@@ -1,14 +1,5 @@
 import { ValidationOptions, ValidateBy, buildMessage } from 'class-validator';
 
-type Dialect =
-  | 'mysql'
-  | 'postgres'
-  | 'sqlite'
-  | 'mariadb'
-  | 'mssql'
-  | 'db2'
-  | 'snowflake'
-  | 'oracle';
 const Dialects = ['mysql', 'postgres', 'sqlite', 'mariadb', 'mssql', 'db2', 'snowflake', 'oracle'];
 export const IS_VALID_DIALECT = 'isValidDialect';
 
