@@ -1,19 +1,12 @@
 import { Module } from '@nestjs/common';
 import { EnvConfigService } from '../config/services/env-config.service';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { SequelizeOptions } from './providers/database.provider';
 
 @Module({
   imports: [
     SequelizeModule.forRootAsync({
-      useFactory: async (envConfig: EnvConfigService) => ({
-        dialect: envConfig.variables.db.dialect,
-        host: envConfig.variables.db.host,
-        port: envConfig.variables.db.port,
-        username: envConfig.variables.db.username,
-        password: envConfig.variables.db.password,
-        autoLoadModels: true,
-        synchronize: true,
-      }),
+      useClass: SequelizeOptions,
       inject: [EnvConfigService],
     }),
   ],
