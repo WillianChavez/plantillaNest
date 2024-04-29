@@ -1,4 +1,4 @@
-import { Table, Model, Column, PrimaryKey, AutoIncrement, IsDate, Is } from 'sequelize-typescript';
+import { Table, Model, Column, PrimaryKey, AutoIncrement, IsDate } from 'sequelize-typescript';
 
 @Table
 export default class User extends Model {
